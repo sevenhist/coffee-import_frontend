@@ -84,7 +84,6 @@ function App() {
             <Route path={ROUTES.AUTH.registration} element={<Registration />} />
           </Route>
           <Route path={ROUTES.checkout} element={<Checkout />} />
-
           <Route element={<PrivateLayout />}>
             <Route path={ROUTES.PRIVATE.cabinet} element={<Cabinet />}>
               <Route index element={<Navigate to={ROUTES.PRIVATE.personalInformation} />} />
