@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import s from "./ScrollButon.module.scss"
 
 export const ScrollButton = () => {
+    
     const [buttonActive, setButtonIsActive] = useState(false);
     useEffect(() => {
         const handleScroll = () => {
