@@ -9,7 +9,7 @@
     justify-content: center;
     position: fixed;
     right: toRem(30);
-    transition: transform .3s ease;
+    transition: transform .3s ease, opacity .3s ease;;
     opacity: .3s ease;
     z-index: 45;
     opacity: 0;

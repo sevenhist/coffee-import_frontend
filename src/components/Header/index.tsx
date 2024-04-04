@@ -13,6 +13,7 @@ import { useLockedBody } from "hooks/useScrollLock";
 import { selectCartProducts, selectTotalCount } from "features/user/cartSlice";
 import { useTheme } from "components/Theme";
 import cart from "../../img/cart.svg"
+import AuthService from "api/services/AuthService";
 
 
 interface HeaderProps {
@@ -23,11 +24,9 @@ export const Header: FC<HeaderProps> = () => {
   const [visibleCartMenu, setVisibleCartMenu] = useState(false);
   const [headerActive, setIsHeaderActive] = useState(false);
   const [isActiveMobileMenu, setIsActiveMobileMenu] = useState(false);
-  const [themeButton, setThemeButton] = useState(false)
 
   const [locked, setLocked] = useLockedBody(false, 'root')
   const totalCount = useAppSelector(selectTotalCount)
-  const dispatch = useAppDispatch()
 
   const changeVisibleHeader = () => {
     setVisibleHeader(false);
@@ -56,7 +55,7 @@ export const Header: FC<HeaderProps> = () => {
       if (window.scrollY > 69) {
         setIsHeaderActive(true);
         document.documentElement.dataset.class = "header-active";
-      } else if(window.scrollY === 0) {
+      } else if (window.scrollY === 0) {
         setIsHeaderActive(false);
         document.documentElement.dataset.class = "";
       }
@@ -68,6 +67,9 @@ export const Header: FC<HeaderProps> = () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+  // preloader
+  
+  //preloader
 
   return (
     <>

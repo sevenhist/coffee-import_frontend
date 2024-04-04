@@ -28,6 +28,8 @@ import { ProductLayout } from 'layouts/ProductLayout';
 import { Checkout } from 'pages/Checkout';
 import { ThemeProvider } from 'components/Theme';
 import { History } from 'pages/Cabinet/components/Content/MainCabinet/components/HistoryComponent';
+import { ConditionsOfWork } from 'pages/Cabinet/components/Content/MainCabinet/components/ConditionsOfWork';
+import { Chapter } from 'pages/Cabinet/components/Content/MainCabinet/components/Chapter';
 
 
 
@@ -89,8 +91,8 @@ function App() {
               <Route path={ROUTES.PRIVATE.personalInformation} element={<UserComponent />} />
               <Route path={ROUTES.PRIVATE.orders} element={<History />} />
               <Route path={ROUTES.PRIVATE.dealership} element={<DealerComponent />} />
-              <Route path={ROUTES.PRIVATE.conditions} element={<p>content 3</p>} />
-              <Route path={ROUTES.PRIVATE.applications} element={<p>content 4</p>} />
+              <Route path={ROUTES.PRIVATE.conditions} element={<ConditionsOfWork />} />
+              <Route path={ROUTES.PRIVATE.applications} element={<Chapter />} />
             </Route>
           </Route>
           <Route path="*" element={<NotFoundPage />} />

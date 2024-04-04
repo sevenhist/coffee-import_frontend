@@ -10,7 +10,7 @@ interface MainLayoutProps { }
 export const MainLayout: FC<MainLayoutProps> = () => {
 
     return (
-        <div className={s.main}>
+        <div className={s.main__wrapper}>
             <Header/>
             <div className={s.main}>
                 <Outlet />

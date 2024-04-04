@@ -14,11 +14,14 @@ import { ROUTES } from "app/routes"
 import { CartModal } from "components/CartModal"
 import { useLockedBody } from "hooks/useScrollLock"
 import { ProductCard } from "components/ProductCard"
+import { setPageLoader } from "features/user/userSlice"
 
 
 export const Products = () => {
     const { categoryId } = useParams()
     const dispatch = useAppDispatch()
+    const products = useAppSelector(selectProducts)
+    const category = useAppSelector(selectOneCategory)
     useEffect(() => {
         dispatch(fetchProducts(categoryId as string))
         dispatch(fetchOneCategory(categoryId as string))
@@ -26,8 +29,6 @@ export const Products = () => {
     const [visibleCartMenu, setVisibleCartMenu] = useState(false);
     const [locked, setLocked] = useLockedBody(false, 'root')
 
-    const products = useAppSelector(selectProducts)
-    const category = useAppSelector(selectOneCategory)
     const itemsPerPage = 32
     const result = usePagination({ array: products, itemsPerPage })
 

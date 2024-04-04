@@ -9,6 +9,7 @@ import s from './Cabinet.module.scss';
 import { Content } from './components/Content/Content';
 import { Header } from 'components/Header';
 import { Footer } from 'components/Footer';
+import { ScrollButton } from 'components/ScrollButton';
 
 interface CabinetProps { }
 
@@ -20,6 +21,7 @@ export const Cabinet: FC<CabinetProps> = () => {
                 <Container>
                     <Content />
                 </Container>
+                <ScrollButton />
             </div>
             <Footer />
         </div>

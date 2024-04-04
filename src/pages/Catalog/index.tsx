@@ -9,21 +9,23 @@ import ReactPaginate from 'react-paginate';
 import { Pagination, PaginationSelectedItem } from 'components/ui/Pagination';
 import { usePagination } from 'shared/hooks/usePagination';
 import { CatalogCard } from 'components/CatalogCard';
+import { PageLoader } from 'components/Loader';
+import { setPageLoader } from 'features/user/userSlice';
 
 
 interface Catalog { }
 
-export const Catalog: FC<Catalog> = () => {
+export const Catalog: FC<Catalog> = () => { 
     const dispatch = useAppDispatch();
     
     const categories = useAppSelector(selectCategories)
     useEffect(() => {
+        // Datenabruf starten
         dispatch(fetchCategories())
-    }, []) // якщо другий параметр в useEffect це пусти масів [], то функція перед пустим масівом буде відображатися лише один раз 
-
+    }, []);
+    
     const result = usePagination({array: categories, itemsPerPage: 32})
     const filteredCategories = result.slicedArray
-
     return (
         <div className={s.categories}>
             <Container>

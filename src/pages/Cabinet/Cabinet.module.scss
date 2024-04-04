@@ -17,5 +17,6 @@
     [data-class="header-active"] & {
         top: 69px;
         position: sticky;
+        padding-bottom: toRem(69);
     }
 }

@@ -23,7 +23,7 @@ export const ScrollButton = () => {
 
     const onScrollButtonClick = () => {
         window.scrollTo({
-            top: 69,
+            top: 0,
             behavior: 'smooth' 
         });
     }

@@ -141,12 +141,14 @@ export const fetchSendCartToEmail = createAsyncThunk(
 
 interface UserState {
   user: IUser | null,
-  isAuth: boolean
+  isAuth: boolean,
+  pageLoader: boolean
 }
 
 const initialState: UserState = {
   user: null,
-  isAuth: false
+  isAuth: false,
+  pageLoader: true
 }
 
 const userSlice = createSlice({
@@ -158,6 +160,9 @@ const userSlice = createSlice({
     },
     setUser: (state, action: PayloadAction<IUser | null>) => {
       state.user = action.payload
+    },
+    setPageLoader: (state, action: PayloadAction<boolean>) => {
+      state.pageLoader = action.payload
     }
   },
   extraReducers: (builder) => {
@@ -225,8 +230,9 @@ const userSlice = createSlice({
   },
 })
 
-export const { setAuth, setUser } = userSlice.actions
+export const { setAuth, setUser, setPageLoader } = userSlice.actions
 export const selectAuth = (state: RootState) => state.user.isAuth
 export const selectUser = (state: RootState) => state.user.user
+export const selectIsLoading = (state: RootState) => state.user.pageLoader
 
 export default userSlice.reducer
