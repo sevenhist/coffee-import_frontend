@@ -35,10 +35,10 @@ import { Chapter } from 'pages/Cabinet/components/Content/MainCabinet/components
 
 function App() {
   const dispatch = useAppDispatch();
-  const [isLoading, setIsLoading] = useState(true)
+  const [isLoading, setIsLoading] = useState(false)
   useEffect(() => {
     if (localStorage.getItem('token')) {
-      // setIsLoading(true)
+      //setIsLoading(true)
       const checkAuth = async () => {
         try {
           const response = await AuthService.auth()
