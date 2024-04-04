@@ -13,6 +13,7 @@ export const fetchCategories = createAsyncThunk(
             const response = await ShopService.getCategories();
             return response.data;
         } catch (err: unknown) {
+            console.log(err, "CATCH ERR")
             if (err instanceof AxiosError) {
                 return rejectWithValue(err.response?.data?.message || 'error get categories');
             } else {

@@ -1,7 +1,7 @@
 import AuthService from 'api/services/AuthService';
 import axios from 'axios';
 
-export const API_URL = 'https://deploy-mern-api-pi.vercel.app';
+export const API_URL = 'http://localhost:4000/api';
 
 const $api = axios.create({
     withCredentials: true,

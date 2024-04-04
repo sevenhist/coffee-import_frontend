@@ -7,7 +7,7 @@ import { NotFoundPage } from 'pages/NotFoundPage';
 import { Login } from 'pages/Login';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { useAppDispatch, useAppSelector } from 'app/hooks';
+import { useAppDispatch } from 'app/hooks';
 import { setAuth, setUser } from 'features/user/userSlice';
 import AuthService from 'api/services/AuthService';
 import { Registration } from 'pages/Registration/Registration';
