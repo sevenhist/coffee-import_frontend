@@ -26,6 +26,7 @@ import { Comments } from 'pages/Products/Product/Comments';
 import { Delivery } from 'pages/Products/Product/Delivery';
 import { ProductLayout } from 'layouts/ProductLayout';
 import { Checkout } from 'pages/Checkout';
+import { ThemeProvider } from 'components/Theme';
 import { History } from 'pages/Cabinet/components/Content/MainCabinet/components/HistoryComponent';
 import { ConditionsOfWork } from 'pages/Cabinet/components/Content/MainCabinet/components/ConditionsOfWork';
 import { Chapter } from 'pages/Cabinet/components/Content/MainCabinet/components/Chapter';
@@ -34,11 +35,10 @@ import { Chapter } from 'pages/Cabinet/components/Content/MainCabinet/components
 
 function App() {
   const dispatch = useAppDispatch();
-  const [isLoading, setIsLoading] = useState(false)
+  const [isLoading, setIsLoading] = useState(true)
   useEffect(() => {
     if (localStorage.getItem('token')) {
       const checkAuth = async () => {
-        setIsLoading(true)
         try {
           const response = await AuthService.auth()
           localStorage.setItem('token', response.data.accessToken)
@@ -53,9 +53,10 @@ function App() {
         } finally {
           setIsLoading(false)
         }
-      } 
+      }
+
       checkAuth()
-    } 
+    }
   }, [])
   ///////////////////////////////////////////////////////////////
 
@@ -64,6 +65,7 @@ function App() {
   }
   return (
     <div className="App">
+      <ThemeProvider>
         <Routes>
           <Route element={<MainLayout />}>
             <Route path={ROUTES.home} element={<Main />} />
@@ -93,6 +95,7 @@ function App() {
           </Route>
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
+      </ThemeProvider>
     </div>
   );
 }
