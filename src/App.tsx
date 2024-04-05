@@ -37,9 +37,9 @@ function App() {
   const [isLoading, setIsLoading] = useState(false)
   useEffect(() => {
     if (localStorage.getItem('token')) {
-      setIsLoading(true)
       const checkAuth = async () => {
         try {
+          setIsLoading(true)
           const response = await AuthService.auth()
           localStorage.setItem('token', response.data.accessToken)
           dispatch(setAuth(true))
