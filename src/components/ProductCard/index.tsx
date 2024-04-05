@@ -25,7 +25,7 @@ export const ProductCard: FC<ProductCardProps> = ({ array }) => {
     }
     const closeCartMenu = () => {
         setVisibleCartMenu(false)
-        setLocked(false);
+        setLocked(!locked);
     }
 
     return (
