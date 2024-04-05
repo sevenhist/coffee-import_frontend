@@ -38,8 +38,8 @@ export const Product: FC = () => {
     }
     const addProductInCart = (product: IProduct) => {
         dipsatch(addProductToCart(product))
-        setVisibleCartMenu(!visibleCartMenu)
-        setLocked(!locked)
+        setVisibleCartMenu(true)
+        setLocked(true)
     }
     const closeCartMenu = () => {
         setVisibleCartMenu(false)
