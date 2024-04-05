@@ -2,7 +2,7 @@
   "homepage": "https://sevenhist.github.io/coffee-import_frontend",
   "name": "coffee-import",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "@reduxjs/toolkit": "^2.0.1",
     "@testing-library/jest-dom": "^5.17.0",
