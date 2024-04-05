@@ -36,29 +36,27 @@ function App() {
   const dispatch = useAppDispatch();
   const [isLoading, setIsLoading] = useState(false)
   useEffect(() => {
-    const checkAuth = async () => {
-      try {
-        setIsLoading(true);
-        const response = await AuthService.auth();
-        localStorage.setItem('token', response.data.accessToken);
-        dispatch(setAuth(true));
-        dispatch(setUser(response.data.user));
-        toast("Authorized", {
-          type: "success"
-        });
-        console.log(response.data.user, "USER INFO");
-      } catch (error: any) { // заменяем "e: any" на просто "error"
-        console.log(error.response?.data?.message);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-  
     if (localStorage.getItem('token')) {
-      checkAuth();
-    }
-  }, [dispatch]);
-  
+      const checkAuth = async () => {
+        setIsLoading(true)
+        try {
+          const response = await AuthService.auth()
+          localStorage.setItem('token', response.data.accessToken)
+          dispatch(setAuth(true))
+          dispatch(setUser(response.data.user))
+          toast("Authorized", {
+            type: "success"
+          });
+          console.log(response.data.user, "USER INFO")
+        } catch (e: any) {
+          console.log(e.response?.data?.message)
+        } finally {
+          setIsLoading(false)
+        }
+      } 
+      checkAuth()
+    } 
+  }, [])
   ///////////////////////////////////////////////////////////////
 
   if (isLoading) {

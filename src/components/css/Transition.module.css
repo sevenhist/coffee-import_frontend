@@ -1,0 +1,58 @@
+.opacity.entered {
+  opacity: 0;
+  visibility: hidden;
+}
+.opacity.entering {
+  opacity: 1;
+  visibility: visible;
+}
+.opacity.exiting {
+  opacity: 1;
+  visibility: visible;
+}
+.opacity.exited {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.translateTop.entered {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20%);
+}
+.translateTop.entering {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.translateTop.exiting {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.translateTop.exited {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20%);
+}
+
+.scaleIn.entered {
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.9);
+}
+.scaleIn.entering {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+}
+.scaleIn.exiting {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+}
+.scaleIn.exited {
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.9);
+}
