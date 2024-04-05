@@ -54,8 +54,9 @@ function App() {
           setIsLoading(false)
         }
       }
-
       checkAuth()
+    } else {
+      setIsLoading(false)
     }
   }, [])
   ///////////////////////////////////////////////////////////////
