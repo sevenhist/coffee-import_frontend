@@ -26,8 +26,6 @@ export const Products = () => {
         dispatch(fetchProducts(categoryId as string))
         dispatch(fetchOneCategory(categoryId as string))
     }, [])
-    const [visibleCartMenu, setVisibleCartMenu] = useState(false);
-    const [locked, setLocked] = useLockedBody(false, 'root')
 
     const itemsPerPage = 32
     const result = usePagination({ array: products, itemsPerPage })

@@ -20,12 +20,12 @@ export const ProductCard: FC<ProductCardProps> = ({ array }) => {
 
     const addProductInCart = (product: IProduct) => {
         dispatch(addProductToCart(product))
-        setVisibleCartMenu(true)
-        setLocked(true)
+        setVisibleCartMenu(!visibleCartMenu)
+        setLocked(!locked)
     }
     const closeCartMenu = () => {
         setVisibleCartMenu(false)
-        setLocked(!locked);
+        setLocked(false);
     }
 
     return (
