@@ -95,7 +95,7 @@ export const PasswordsComponent:FC<PasswordsProps> = ({setActivePasswordButton})
                         <button type="button" onClick={() => setActivePasswordButton(false)}>Персональна інформація</button>
                     </div>
                     <div className={s.settings__submit}>
-                        <button className={s.settings__save} type="submit">Save</button>
+                        <button className={s.settings__save} type="submit">Зберегти</button>
                     </div>
                 </div>
             </form>

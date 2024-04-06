@@ -68,7 +68,7 @@ export const History = () => {
                         }
                     </div>
                     :
-                    <p>Замовлень поки немає</p>
+                    <p className={s.empty_history}>Замовлень поки немає</p>
             }
         </div>
     )

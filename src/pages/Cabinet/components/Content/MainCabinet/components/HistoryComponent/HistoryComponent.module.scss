@@ -94,3 +94,6 @@
     color: $blackTextColor;
     @include adaptiveValue("font-size", 21, 17)
 }
+.empty_history {
+    text-align: center;
+}
