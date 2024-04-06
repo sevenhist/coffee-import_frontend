@@ -32,6 +32,7 @@ export const CheckoutContactsData: FC<CheckoutContactsDataProps> = ({ fields, ac
                             watch={field.watch}
                             validation={field.validation}
                             value={field.value}
+                            placeholder={field.placeholder}
                         />
                     </div>
                 ))}

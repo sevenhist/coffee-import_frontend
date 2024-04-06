@@ -15,17 +15,9 @@ interface ProductCardProps {
 
 export const ProductCard: FC<ProductCardProps> = ({ array }) => {
     const dispatch = useAppDispatch()
-    const [visibleCartMenu, setVisibleCartMenu] = useState(false);
-    const [locked, setLocked] = useLockedBody(false, 'root')
 
     const addProductInCart = (product: IProduct) => {
         dispatch(addProductToCart(product))
-        setVisibleCartMenu(!visibleCartMenu)
-        setLocked(!locked)
-    }
-    const closeCartMenu = () => {
-        setVisibleCartMenu(false)
-        setLocked(false);
     }
 
     return (
@@ -78,7 +70,6 @@ export const ProductCard: FC<ProductCardProps> = ({ array }) => {
                     )
                 })
             }
-            <CartModal closeCartMenu={closeCartMenu} visibleCartMenu={visibleCartMenu} />
         </ul>
     )
 }

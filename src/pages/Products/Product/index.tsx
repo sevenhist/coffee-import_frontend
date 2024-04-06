@@ -38,12 +38,6 @@ export const Product: FC = () => {
     }
     const addProductInCart = (product: IProduct) => {
         dipsatch(addProductToCart(product))
-        setVisibleCartMenu(true)
-        setLocked(true)
-    }
-    const closeCartMenu = () => {
-        setVisibleCartMenu(false)
-        setLocked(false);
     }
     useEffect(() => {
         dipsatch(fetchProduct(id as string))
@@ -155,7 +149,6 @@ export const Product: FC = () => {
                     </div>
                 </div>
             </Container>
-            <CartModal closeCartMenu={closeCartMenu} visibleCartMenu={visibleCartMenu} />
         </div>
     )
 }

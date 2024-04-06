@@ -16,6 +16,10 @@ export const Pagination: FC<Pagination> = ({ handlePageClick, pageCount = 8 }) =
 
     const onPageChange = (selectedItem: { selected: number }) => {
         handlePageClick(selectedItem);
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth' 
+        });
     }
 
     return (
