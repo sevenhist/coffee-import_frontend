@@ -91,14 +91,14 @@ export const Header: FC<HeaderProps> = () => {
             <div className={s.basket}>
               <button onClick={openCartMenu} className={s.menu__right__button}>
                 <img src={cart} alt="Image" />
-              </button>
-              {
+                {
                 totalCount !== 0 ?
                   <div className={s.basket__value}>
                     <span>{totalCount}</span>
                   </div>
                   : ''
               }
+              </button>
             </div>
             {isAuth ? (
               <Link to={ROUTES.PRIVATE.cabinet} className={s.menu__right__profile}>
