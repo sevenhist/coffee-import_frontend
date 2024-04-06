@@ -15,7 +15,7 @@ export const Logo: FC<LogoProps> = ({ withText = true, className, adaptiveText =
     return (
         <Link onClick={onClick} to={ROUTES.home} className={`${className && className} ${s.logo}`}>
             <img className={s.logo__icon} src={logo} alt="Logo" />
-            {withText ? <p className={`${adaptiveText ? s.logo__adaptive_text : s.logo__text}`}>Coffee Import</p> : ''}
+            {withText ? <p className={`${adaptiveText ? s.logo__adaptive_text : s.logo__text}`}>Rudi Import</p> : ''}
         </Link>
     )
 }
