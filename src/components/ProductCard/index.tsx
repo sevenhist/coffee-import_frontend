@@ -26,7 +26,10 @@ export const ProductCard: FC<ProductCardProps> = ({ array }) => {
                 array.map((product: IProduct) => {
                     return (
                         <div className={s.productInfoContainer} key={product.id}>
-                            <Link to={`${ROUTES.product}/${product.id}`} className={s.products__list__item}>
+                            <Link onClick={() => window.scrollTo({
+                                top: 0,
+                                behavior: 'smooth'
+                            })} to={`${ROUTES.product}/${product.id}`} className={s.products__list__item}>
                                 <div className={s.products__list__actions}>
                                     <div className={`${s.products__list__action} ${s.products__list__action__sale}`}>
                                         Акція -50%

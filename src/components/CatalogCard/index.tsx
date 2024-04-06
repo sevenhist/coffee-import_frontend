@@ -9,13 +9,16 @@ interface CatalogCardProps {
     classname?: string
 }
 
-export const CatalogCard: FC<CatalogCardProps> = ({array, classname}) => {
+export const CatalogCard: FC<CatalogCardProps> = ({ array, classname }) => {
     return (
         <ul className={`${classname ? classname : ''} ${s.category_list}`}>
             {array.map(category => {
                 return (
                     <li key={category.id} className={s.items__main__item}>
-                        <Link to={`${ROUTES.catalog}/${category.id}`} className={s.items__main__link}>
+                        <Link onClick={() => window.scrollTo({
+                            top: 0,
+                            behavior: 'smooth'
+                        })} to={`${ROUTES.catalog}/${category.id}`} className={s.items__main__link}>
                             <div className={s.items__main__link__img}>
                                 <img src={category.imgUrl} alt={category.title} />
                             </div>

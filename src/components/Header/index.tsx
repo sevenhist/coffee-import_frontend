@@ -67,17 +67,20 @@ export const Header: FC<HeaderProps> = () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
-  // preloader
-  
-  //preloader
-
+  const onCatalogClick = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth' 
+    });
+  }
+ 
   return (
     <>
       <header className={`${headerActive ? s.header__fixed : ""} ${visibleHeader ? s.header : s.header_not_visible}`}>
         <div className={`${s.menu}`}>
           <button onClick={menuOpen} type="button" className={`${s['icon-menu']} ${isActiveMobileMenu ? s['menu-open'] : ''}`}><span></span></button>
           <Logo className={s.icon__logo} adaptiveText={true} />
-          <LinkButton to={ROUTES.catalog} variables="fitContent" className={s.buttonCatalog} withPicture={true}>
+          <LinkButton onClick={onCatalogClick} to={ROUTES.catalog} variables="fitContent" className={s.buttonCatalog} withPicture={true}>
             <span>Каталог</span>
           </LinkButton>
           <div className={s.menu__search}>

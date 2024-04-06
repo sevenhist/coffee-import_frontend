@@ -191,7 +191,10 @@ export const Main = () => {
                 <div className={s.main__cards}>
                     <Title>Хіти продажів</Title>
                     <ProductCard array={filteredProducts} />
-                    <LinkButton className={s.show__more__button} to={ROUTES.catalog}>Переглянути все</LinkButton>
+                    <LinkButton onClick={() => window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    })} className={s.show__more__button} to={ROUTES.catalog}>Переглянути все</LinkButton>
                 </div>
                 <div className={`${s.main__help} ${s['help-main']}`}>
                     <Title>Допомога</Title>
